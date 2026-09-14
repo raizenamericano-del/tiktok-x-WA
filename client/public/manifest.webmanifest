@@ -1,0 +1,29 @@
+{
+  "name": "KyyPureStatus — Status HD",
+  "short_name": "KyyPureStatus",
+  "description": "Kirim video HD anti pecah ke WhatsApp buat di-forward ke Status. PureHD Engine v4 by KyyDevv.",
+  "id": "/",
+  "start_url": "/?src=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#05050c",
+  "theme_color": "#05050c",
+  "categories": ["video", "utilities", "social"],
+  "lang": "id",
+  "dir": "ltr",
+  "icons": [
+    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/icon-1024.png", "sizes": "1024x1024", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    {
+      "name": "Kirim Video",
+      "short_name": "Kirim",
+      "url": "/?page=send",
+      "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }]
+    }
+  ]
+}

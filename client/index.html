@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="id" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=5" />
+    <meta name="theme-color" content="#05050c" />
+    <meta name="color-scheme" content="dark" />
+    <meta
+      name="description"
+      content="KyyPureStatus by KyyDevv — kirim video HD anti pecah ke WhatsApp buat di-forward ke Status. PureHD Engine v4: LANCZOS scaling, HDR tonemap, 2-pass encode."
+    />
+    <meta name="keywords" content="Status HD, WhatsApp Status, kompres video HD, KyyPureStatus, KyyDevv" />
+
+    <!-- PWA / install sebagai app -->
+    <meta name="application-name" content="KyyPureStatus" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="KyyPureStatus" />
+    <meta name="mobile-web-app-capable" content="yes" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="KyyPureStatus — Status HD, Auto Tajam" />
+    <meta property="og:description" content="Kirim video HD anti pecah ke WhatsApp, siap di-forward ke Status. PureHD Engine v4 by KyyDevv." />
+    <meta property="og:image" content="/icons/icon-512.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="KyyPureStatus — Status HD, Auto Tajam" />
+    <meta name="twitter:image" content="/icons/icon-512.png" />
+
+    <link rel="icon" href="/favicon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <title>KyyPureStatus — Status HD by KyyDevv</title>
+    <style>
+      html, body { background: #05050c; }
+      #boot { position: fixed; inset: 0; display: grid; place-items: center; background: #05050c; z-index: 99; }
+      #boot .b { width: 44px; height: 44px; border-radius: 14px; background: linear-gradient(135deg, #7c5cff, #ff3f9a 55%, #22e3c4); animation: bp 1.1s ease-in-out infinite; }
+      @keyframes bp { 0%,100% { transform: scale(0.86); opacity: 0.6 } 50% { transform: scale(1); opacity: 1 } }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <div id="boot"><div class="b"></div></div>
+    <script type="module" src="/src/main.jsx"></script>
+    <script>
+      // hilangkan boot placeholder begitu React mount
+      new MutationObserver(function (m, obs) {
+        if (document.querySelector('#root')?.children.length) {
+          document.getElementById('boot')?.remove();
+          obs.disconnect();
+        }
+      }).observe(document.getElementById('root'), { childList: true });
+    </script>
+  </body>
+</html>
